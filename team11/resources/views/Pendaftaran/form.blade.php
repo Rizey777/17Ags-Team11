@@ -23,13 +23,18 @@
                 <h3 class="font-semibold text-lg">Kegiatan: {{ $kegiatan->judul }}</h3>
                 <p>Tanggal: {{ $kegiatan->tanggal }} | Lokasi: {{ $kegiatan->lokasi }}</p>
 
-                <form action="{{ route('daftar') }}" method="POST">
+                <form action="{{ route('daftar') }}" method="POST" class="mb-4">
                     @csrf
                     <input type="hidden" name="kegiatan_id" value="{{ $kegiatan->id }}">
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">
                         Daftar Sekarang
                     </button>
                 </form>
+
+                <!-- Tombol kembali ke lobby -->
+                <a href="{{ route('dashboard') }}" class="inline-block bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded">
+                    Kembali ke Lobby
+                </a>
             </div>
         </div>
     </div>
