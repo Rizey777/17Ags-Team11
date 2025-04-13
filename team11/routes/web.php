@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\GambarController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,5 +39,7 @@ Route::post('/daftar', [PendaftaranController::class, 'daftar'])->name('daftar')
 Route::post('/daftar', [PendaftaranController::class, 'daftar'])->name('daftar');
 Route::get('/pendaftaran/{id}', [PendaftaranController::class, 'showForm'])->name('pendaftaran.form');
 Route::post('/pendaftaran', [PendaftaranController::class, 'daftar'])->name('daftar');
+Route::post('/upload-gambar', [GambarController::class, 'upload'])->name('gambar.upload');
+
 
 

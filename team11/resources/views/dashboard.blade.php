@@ -25,6 +25,21 @@
                     🚪 Logout
                 </button>
             </form>
+            <!-- Tombol Tambah Gambar -->
+<div class="mb-6">
+    <form action="{{ route('gambar.upload') }}" method="POST" enctype="multipart/form-data" class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+        @csrf
+        <input type="file" name="gambar" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4
+            file:rounded-full file:border-0
+            file:text-sm file:font-semibold
+            file:bg-blue-50 file:text-blue-700
+            hover:file:bg-blue-100" required>
+        
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded shadow">
+            Tambah Gambar 📤
+        </button>
+    </form>
+</div>
 
             <div class="bg-white shadow-sm sm:rounded-lg p-6">
                 @if(session('success'))
